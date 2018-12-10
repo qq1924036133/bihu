@@ -16,13 +16,15 @@ public class LoginController {
 
     @RequestMapping(path = {"/"})
     public String login() {
-        return "login";
+        return "login.html";
     }
 
     @RequestMapping(path = {"/reg/"}, method = {RequestMethod.POST})
     public String reg(String mobile, String password) {
         messageService.sendMessageCode(mobile, messageCode);
-        return "/index";
+        return "redirect:/index.html";
     }
+
+
 
 }
